@@ -66,7 +66,7 @@ for renderer = {'Mitsuba'}
         MakeMontage(radianceDataFiles, montageFile, toneMapFactor, isScale, hints);
     
     % display the sRGB montage
-    ShowXYZAndSRGB([], SRGBMontage, montageName);
+    %ShowXYZAndSRGB([], SRGBMontage, montageName);
 end
 
 
