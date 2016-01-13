@@ -6,7 +6,7 @@ Collada {
     %Camera:translate|sid=location = 0 0 0.1 
     % Camera:rotate|sid=rotationZ = 0 0 1 (zRotCam)
     % Camera:rotate|sid=rotationY = 0 1 0 0
-    Camera:rotate|sid=rotationX = 1 0 0 90
+    % Camera:rotate|sid=rotationX = 1 0 0 90
     % move and resize the sphere to match to photo
     % Sphere:translate|sid=location = (locx) (locy) 0
     %Sphere:scale|sid=scale = 2.2 2.2 2.2
