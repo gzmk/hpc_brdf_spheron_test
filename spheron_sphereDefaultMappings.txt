@@ -1,6 +1,7 @@
 % flip the camera handedness to match Blender-Collada output to Mitsuba and PBRT
 Collada {
     Camera:scale|sid=scale = -1 1 1
+    Camera-camera:type = spherical
     % move the camera for each condition
     % Camera:translate|sid=location = (xCam) (yCam) 0
     %Camera:translate|sid=location = 0 0 0.1 
