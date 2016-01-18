@@ -49,7 +49,7 @@ datetime=datestr(now);
 datetime=strrep(datetime,':','_'); %Replace colon with underscore
 datetime=strrep(datetime,'-','_');%Replace minus sign with underscore
 datetime=strrep(datetime,' ','_');%Replace space with underscore
-hints.recipeName = ['Spheron-',rotz '-', datetime];
+hints.recipeName = ['Spheron-test-', datetime];
 
 ChangeToWorkingFolder(hints);
 
