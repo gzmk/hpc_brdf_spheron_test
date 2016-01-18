@@ -32,7 +32,7 @@ writetable(T,'/scratch/gk925/hpc_brdf_spheron_test/spheron_Conditions.txt','Deli
 setpref('RenderToolbox3', 'workingFolder', '/scratch/gk925/hpc_brdf_spheron_test');
 
 % use this scene and condition file.
-parentSceneFile = 'spheron_sphere_x90dyN64dzN20cm.dae';
+parentSceneFile = 'spheron_sphere_x90dyN59_5d_scale2_3.dae';
 conditionsFile = 'spheron_Conditions.txt';
 mappingsFile = 'spheron_sphereDefaultMappings.txt';
 
