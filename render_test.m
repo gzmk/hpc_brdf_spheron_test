@@ -14,9 +14,16 @@ ro_d = diffuse;
 % ro_d = ['300:', num2str(var(2)), ' 800:', num2str(var(2))];
 alphau = 0.01; % alphau and alphav should always be the same value for isotropic brdf
 % light = ['300:', num2str(1), ' 800:',num2str(1)];
-mycell = {ro_s, ro_d, alphau};
+rotz = 0
+mycell = {ro_s, ro_d, alphau,rotz};
 
-T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau'});
+for i=0.5:0.5:10
+    rotz = i;
+    mycell2 = {ro_s, ro_d, alphau, rotz};
+    mycell = [mycell;mycell2]
+end
+
+T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau' 'rotz'});
 writetable(T,'/scratch/gk925/hpc_brdf_spheron_test/spheron_Conditions.txt','Delimiter','\t')
 
 
@@ -42,7 +49,7 @@ datetime=datestr(now);
 datetime=strrep(datetime,':','_'); %Replace colon with underscore
 datetime=strrep(datetime,'-','_');%Replace minus sign with underscore
 datetime=strrep(datetime,' ','_');%Replace space with underscore
-hints.recipeName = ['Spheron-test-', datetime];
+hints.recipeName = ['Spheron-',rotz '-', datetime];
 
 ChangeToWorkingFolder(hints);
 
