@@ -14,10 +14,10 @@ ro_d = diffuse;
 % ro_d = ['300:', num2str(var(2)), ' 800:', num2str(var(2))];
 alphau = 0.01; % alphau and alphav should always be the same value for isotropic brdf
 % light = ['300:', num2str(1), ' 800:',num2str(1)];
-rotz = 0
+rotz = 0.5;
 mycell = {ro_s, ro_d, alphau,rotz};
 
-for i=0.5:0.5:10
+for i=1.0:0.5:10
     rotz = i;
     mycell2 = {ro_s, ro_d, alphau, rotz};
     mycell = [mycell;mycell2]
