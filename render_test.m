@@ -44,7 +44,7 @@ hints.whichConditions = [];
 
 % Choose batch renderer options.
 hints.imageWidth = 379;
-hints.imageHeight = 2624;
+hints.imageHeight = 1312;
 datetime=datestr(now);
 datetime=strrep(datetime,':','_'); %Replace colon with underscore
 datetime=strrep(datetime,'-','_');%Replace minus sign with underscore
