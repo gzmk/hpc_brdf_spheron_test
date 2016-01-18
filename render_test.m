@@ -14,16 +14,16 @@ ro_d = diffuse;
 % ro_d = ['300:', num2str(var(2)), ' 800:', num2str(var(2))];
 alphau = 0.01; % alphau and alphav should always be the same value for isotropic brdf
 % light = ['300:', num2str(1), ' 800:',num2str(1)];
-rotz = 0.5;
-mycell = {ro_s, ro_d, alphau,rotz};
+% rotz = 0.5;
+mycell = {ro_s, ro_d, alphau};
 
-for i=1.0:0.5:10
-    rotz = i;
-    mycell2 = {ro_s, ro_d, alphau, rotz};
-    mycell = [mycell;mycell2]
-end
+% for i=1.0:0.5:10
+%     rotz = i;
+%     mycell2 = {ro_s, ro_d, alphau, rotz};
+%     mycell = [mycell;mycell2]
+% end
 
-T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau' 'rotz'});
+T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau'});
 writetable(T,'/scratch/gk925/hpc_brdf_spheron_test/spheron_Conditions.txt','Delimiter','\t')
 
 
