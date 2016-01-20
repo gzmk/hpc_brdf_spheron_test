@@ -37,6 +37,22 @@ Mitsuba {
     Camera-camera:sensor:spherical
     % use the path integrator with lots of samples
     integrator:integrator:path
-    Camera-camera_sampler:sampleCount.integer = 64
-    
+    %Camera-camera_sampler:sampleCount.integer = 64
 }
+
+Mitsuba-path {
+    Camera-camera:tansform|name = toWorld
+    Camera-camera:transform:matrix|value = -1 0 3.72529e-09 0 0 1 0 -0.01 -3.72529e-09 0 -1 0.15 0 0 0 1
+    Camera-camera:sampler|id = Camera-camera_sampler
+    Camera-camera:sampler|type = ldsampler
+    Camera-camera_sampler:integer|name = sampleCount
+    Camera-camera_sampler:integer|value = 64
+    %Camera-camera:film|id = Camera-camera_film
+    %Camera-camera:film|type = hdrfilm
+    
+
+}
+
+
+    
+
