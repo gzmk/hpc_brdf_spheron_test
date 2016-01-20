@@ -35,6 +35,7 @@ Generic {
 
 Mitsuba {
     Camera-camera:sensor:spherical
+    Camera-camera_sampler:sampler:ldsampler
     % use the path integrator with lots of samples
     integrator:integrator:path
     %Camera-camera_sampler:sampleCount.integer = 64
