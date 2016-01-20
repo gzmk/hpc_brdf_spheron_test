@@ -7,11 +7,12 @@ function render_test()
 
 % Setup conditions file
 fixed1 = 0.2;
+fixed2 = 0.5;
 diffuse = 'mccBabel-16.spd';
 
 ro_s = ['300:',num2str(fixed1),' 800:',num2str(fixed1)];
-ro_d = diffuse;
-% ro_d = ['300:', num2str(var(2)), ' 800:', num2str(var(2))];
+%ro_d = diffuse;
+ro_d = ['300:', num2str(fixed2), ' 800:', num2str(fixed2)];
 alphau = 0.01; % alphau and alphav should always be the same value for isotropic brdf
 % light = ['300:', num2str(1), ' 800:',num2str(1)];
 % rotz = 0.5;
