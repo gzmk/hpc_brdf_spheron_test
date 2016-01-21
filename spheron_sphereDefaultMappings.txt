@@ -16,11 +16,11 @@ Collada {
 
 % materials
 Generic {
-	Material-material:material:ward
+    Material-material:material:ward
     %Material-material:variant.string = ward
     Material-material:alphaU.float = (alphau)
     Material-material:alphaV.float = (alphau)
-	Material-material:diffuseReflectance.spectrum = (ro_d)
+    Material-material:diffuseReflectance.spectrum = (ro_d)
     Material-material:specularReflectance.spectrum = (ro_s)
 
 }
