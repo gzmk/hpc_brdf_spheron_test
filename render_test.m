@@ -24,13 +24,15 @@ mycell = {ro_s, ro_d, alphau};
 %     mycell = [mycell;mycell2]
 % end
 
-T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau'});
-writetable(T,'/scratch/gk925/hpc_brdf_spheron_test/spheron_Conditions.txt','Delimiter','\t')
-
+% T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau'});
+% writetable(T,'/scratch/gk925/hpc_brdf_spheron_test/spheron_Conditions.txt','Delimiter','\t')
+% 
 
 %%
 % Set preferences
-setpref('RenderToolbox3', 'workingFolder', '/scratch/gk925/hpc_brdf_spheron_test');
+setpref('RenderToolbox3', 'workingFolder', '/Users/gizem/Documents/Research/hpc_brdf_spheron_test');
+
+% setpref('RenderToolbox3', 'workingFolder', '/scratch/gk925/hpc_brdf_spheron_test');
 
 % use this scene and condition file.
 parentSceneFile = 'spheron_sphere3.dae';

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+	Automatically converted from COLLADA
+
+-->
+
+<scene version="0.4.1">
+	<integrator id="integrator" type="direct"/>
+
+	<bsdf id="Material-material" type="diffuse">
+		<rgb name="reflectance" value="0.206973 0.206973 0.206973"/>
+	</bsdf>
+
+	<sensor id="Camera-camera" type="perspective">
+		<float name="fov" value="53.1301"/>
+		<float name="nearClip" value="0.1"/>
+		<float name="farClip" value="100"/>
+		<string name="fovAxis" value="smaller"/>
+
+		<transform name="toWorld">
+			<matrix value="-1 0 3.72529e-09 0 0 1 0 -0.01 -3.72529e-09 0 -1 0.15 0 0 0 1"/>
+		</transform>
+
+		<sampler id="Camera-camera_sampler" type="ldsampler">
+			<integer name="sampleCount" value="4"/>
+		</sampler>
+
+		<film id="Camera-camera_film" type="hdrfilm">
+			<integer name="width" value="2706"/>
+			<integer name="height" value="1353"/>
+			<rfilter type="gaussian"/>
+		</film>
+	</sensor>
+
+	<shape id="Sphere_001-mesh_0" type="serialized">
+		<string name="filename" value="spheron_sphere3-001Unadjusted.serialized"/>
+		<integer name="shapeIndex" value="0"/>
+		<transform name="toWorld">
+			<matrix value="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+		</transform>
+		<ref name="bsdf" id="Material-material"/>
+	</shape>
+
+	<emitter id="Hemi-light" type="point">
+		<rgb name="intensity" value="1 1 1"/>
+
+		<transform name="toWorld">
+			<translate x="2" y="0" z="0"/>
+		</transform>
+	</emitter>
+
+</scene>

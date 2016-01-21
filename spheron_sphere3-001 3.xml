@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+	Automatically converted from COLLADA
+
+-->
+<scene version="0.4.4">
+	
+   <integrator id="integrator" type="path">
+      <integer name="shadingSamples" value="32"/>
+   </integrator>
+
+	
+   <bsdf id="Material-material" type="ward">
+      <float name="alphaU" value="0.01"/>
+      <float name="alphaV" value="0.01"/>
+      <spectrum name="diffuseReflectance" value="300:0.5 800:0.5"/>
+      <spectrum name="specularReflectance" value="300:0.2 800:0.2"/>
+      <string name="variant" value="ward"/>
+   </bsdf>
+
+	
+   <sensor id="Camera-camera" type="spherical"/>
+
+	
+   <shape id="Sphere_001-mesh_0" type="serialized">
+		
+      <string name="filename" value="spheron_sphere3-001Unadjusted.serialized"/>
+		
+      <integer name="shapeIndex" value="0"/>
+		
+      <transform name="toWorld">
+			
+         <matrix value="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+		
+      </transform>
+		
+      <ref id="Material-material" name="bsdf"/>
+	
+   </shape>
+
+	
+   <emitter id="Hemi-light" type="envmap">
+      <string name="filename" value="/scratch/gk925/hpc_brdf_spheron_test/room_apt56_exp1_8_dist2m_morelight_cropped_bilinear.hdr"/>
+   </emitter>
+
+
+</scene>

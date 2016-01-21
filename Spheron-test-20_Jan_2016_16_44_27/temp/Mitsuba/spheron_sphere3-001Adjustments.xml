@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><!-- basic renderer properties that Collada doesn't know about -->
+<scene version="0.4.1">
+   <emitter id="Hemi-light" type="envmap">
+      <string name="filename" value="/Users/gizem/Documents/Research/hpc_brdf_spheron_test/mitsuba_rendering/room_apt56_exp1_8_dist2m_morelight_cropped_bilinear.hdr"/>
+   </emitter>
+   <bsdf id="Material-material" type="ward">
+      <float filename="(alphau)" name="alphaU"/>
+      <float filename="(alphau)" name="alphaV"/>
+      <spectrum filename="(ro_d)" name="diffuseReflectance"/>
+      <spectrum filename="(ro_s)" name="specularReflectance"/>
+   </bsdf>
+
+    
+   <integrator id="integrator" type="path">
+        
+      <integer name="shadingSamples" value="32"/>
+    
+   </integrator>
+    
+    
+   <sensor id="Camera-camera" type="spherical">
+        
+      
+      <transform name="toWorld">
+            
+         
+         <matrix value="-1 0 3.72529e-09 0 0 1 0 -0.01 -3.72529e-09 0 -1 0.15 0 0 0 1"/>
+
+         
+         <translate y="0.015"/>
+         
+         <rotate angle="-60" y="1"/>
+         
+        
+      
+      </transform>
+
+        
+      
+      <sampler id="Camera-camera_sampler" type="ldsampler">
+         
+         <integer name="sampleCount" value="64"/>
+      
+      </sampler>
+
+        
+      
+      <film id="Camera-camera_film" type="hdrfilm">
+            
+         
+         <integer name="width" value="2706"/>
+            
+         
+         <integer name="height" value="1353"/>
+            
+         
+         <rfilter type="gaussian">
+            
+            <float name="stddev" value="0.5"/>
+         
+         </rfilter>
+        
+         
+         <boolean name="banner" value="false"/>
+         
+         <string name="componentFormat" value="float16"/>
+         
+         <string name="fileFormat" value="openexr"/>
+         
+         <string name="pixelFormat" value="spectrum"/>
+      
+      </film>
+    
+   
+   </sensor>
+    
+
+</scene>

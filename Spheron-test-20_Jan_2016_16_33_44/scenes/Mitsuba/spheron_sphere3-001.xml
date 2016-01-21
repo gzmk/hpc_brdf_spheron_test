@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+	Automatically converted from COLLADA
+
+-->
+<scene version="0.4.1">
+	
+   <integrator id="integrator" type="path">
+      <integer name="shadingSamples" value="32"/>
+   </integrator>
+
+	
+   <bsdf id="Material-material" type="ward">
+      <float filename="(alphau)" name="alphaU"/>
+      <float filename="(alphau)" name="alphaV"/>
+      <spectrum filename="(ro_d)" name="diffuseReflectance"/>
+      <spectrum filename="(ro_s)" name="specularReflectance"/>
+      <string name="variant" value="ward"/>
+   </bsdf>
+
+	
+   <sensor id="Camera-camera" type="spherical">
+      <transform name="toWorld">
+         <matrix value="-1 0 3.72529e-09 0 0 1 0 -0.01 -3.72529e-09 0 -1 0.15 0 0 0 1"/>
+         <rotate angle="-60" y="1"/>
+         <translate y="0.015"/>
+      </transform>
+   </sensor>
+
+	
+   <shape id="Sphere_001-mesh_0" type="serialized">
+		
+      <string name="filename" value="spheron_sphere3-001Unadjusted.serialized"/>
+		
+      <integer name="shapeIndex" value="0"/>
+		
+      <transform name="toWorld">
+			
+         <matrix value="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+		
+      </transform>
+		
+      <ref id="Material-material" name="bsdf"/>
+	
+   </shape>
+
+	
+   <emitter id="Hemi-light" type="envmap">
+      <string name="filename" value="/Users/gizem/Documents/Research/hpc_brdf_spheron_test/mitsuba_rendering/room_apt56_exp1_8_dist2m_morelight_cropped_bilinear.hdr"/>
+   </emitter>
+
+
+</scene>

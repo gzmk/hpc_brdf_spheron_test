@@ -17,7 +17,7 @@ Collada {
 % materials
 Generic {
 	Material-material:material:ward
-    Material-material:variant.string = ward
+    %Material-material:variant.string = ward
     Material-material:alphaU.float = (alphau)
     Material-material:alphaV.float = (alphau)
 	Material-material:diffuseReflectance.spectrum = (ro_d)
@@ -34,18 +34,18 @@ Generic {
 }
 
 Mitsuba {
-    Camera-camera:sensor:spherical
-    Camera-camera_sampler:sampler:ldsampler
+    %Camera-camera:sensor:spherical
+    %Camera-camera_sampler:sampler:ldsampler
     % use the path integrator with lots of samples
     integrator:integrator:path
-    %Camera-camera_sampler:sampleCount.integer = 64
+    Camera-camera_sampler:sampleCount.integer = 64
 }
 
 Mitsuba-path {
-    Camera-camera:transform.name = toWorld
-    Camera-camera:transform:matrix.value = -1 0 3.72529e-09 0 0 1 0 -0.01 -3.72529e-09 0 -1 0.15 0 0 0 1
-    Camera-camera:sampler.id = Camera-camera_sampler
-    Camera-camera:sampler.type = ldsampler
+    %Camera-camera:transform.name = toWorld
+    %Camera-camera:transform:matrix.value = -1 0 3.72529e-09 0 0 1 0 -0.01 -3.72529e-09 0 -1 0.15 0 0 0 1
+    %Camera-camera:sampler.id = Camera-camera_sampler
+    %Camera-camera:sampler.type = ldsampler
     %Camera-camera_sampler:integer.name = sampleCount
     %Camera-camera_sampler:integer.value = 64
     %Camera-camera:film|id = Camera-camera_film
