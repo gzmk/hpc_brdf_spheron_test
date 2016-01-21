@@ -1,4 +1,0 @@
-2016-01-20 16:43:26 INFO  main [mitsuba.cpp:255] Mitsuba version 0.4.1 (Mac OS, 64 bit), Copyright (c) 2012 Wenzel Jakob
-2016-01-20 16:43:26 INFO  main [mitsuba.cpp:359] Parsing scene description from "/Users/gizem/Documents/Research/hpc_brdf_spheron_test/Spheron-test-20_Jan_2016_16_43_19/scenes/Mitsuba/spheron_sphere3-001.xml" ..
-2016-01-20 16:43:26 INFO  main [PluginManager] Loading plugin "plugins/path.dylib" ..
-2016-01-20 16:43:26 WARN  main [scenehandler.cpp:677] Unqueried attribute "shadingSamples" in element "integrator"
