@@ -1,4 +1,4 @@
-# hpc_brdf_spheron_test
+# README
 
 This code is written to run on the High Performance Computer (HPC)
 If running on a computer locally, all you need is render_test.m and Conditions, Mappings and .dae (3D model) files.
