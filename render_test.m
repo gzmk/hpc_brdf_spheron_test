@@ -1,7 +1,10 @@
 % Author: Gizem Kucukoglu
 % April 2015
 
-function render_test()
+%function render_test()
+
+clear
+clc
 
 %% Render spheron imagefor test
 
@@ -23,13 +26,13 @@ mycell = {ro_s, ro_d, alphau};
 %     mycell = [mycell;mycell2]
 % end
 
-T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau'});
-writetable(T,'/scratch/gk925/hpc_brdf_spheron_test/spheron_Conditions.txt','Delimiter','\t')
-% 
+%T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau'});
+%writetable(T,'/scratch/gk925/hpc_brdf_spheron_test/spheron_Conditions.txt','Delimiter','\t')
+%
 
 %%
 % Set preferences
-setpref('RenderToolbox3', 'workingFolder', '/Users/gizem/Documents/Research/hpc_brdf_spheron_test');
+%setpref('RenderToolbox3', 'workingFolder', '/Users/gizem/Documents/Research/hpc_brdf_spheron_test');
 
 % setpref('RenderToolbox3', 'workingFolder', '/scratch/gk925/hpc_brdf_spheron_test');
 
@@ -39,19 +42,20 @@ conditionsFile = 'spheron_Conditions.txt';
 mappingsFile = 'spheron_sphereDefaultMappings.txt';
 
 % Make sure all illuminants are added to the path.
-addpath(genpath(pwd))
+%addpath(genpath(pwd))
 
 % which materials to use, [] means all
 hints.whichConditions = [];
 
 % Choose batch renderer options.
-hints.imageWidth = 2706;
-hints.imageHeight = 1353;
-datetime=datestr(now);
-datetime=strrep(datetime,':','_'); %Replace colon with underscore
-datetime=strrep(datetime,'-','_');%Replace minus sign with underscore
-datetime=strrep(datetime,' ','_');%Replace space with underscore
-hints.recipeName = ['Spheron-test-', datetime];
+hints.imageWidth = 640;
+hints.imageHeight = 480;
+% datetime=datestr(now);
+% datetime=strrep(datetime,':','_'); %Replace colon with underscore
+% datetime=strrep(datetime,'-','_');%Replace minus sign with underscore
+% datetime=strrep(datetime,' ','_');%Replace space with underscore
+% hints.recipeName = ['Spheron-test-', datetime];
+hints.recipeName = 'Spheron-test';
 
 ChangeToWorkingFolder(hints);
 
@@ -59,6 +63,7 @@ ChangeToWorkingFolder(hints);
 toneMapFactor = 10;
 isScale = true;
 
+%%
 for renderer = {'Mitsuba'}
     
     % choose one renderer
@@ -77,5 +82,3 @@ for renderer = {'Mitsuba'}
     % display the sRGB montage
     %ShowXYZAndSRGB([], SRGBMontage, montageName);
 end
-
-
