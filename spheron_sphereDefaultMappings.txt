@@ -1,59 +1,32 @@
 % flip the camera handedness to match Blender-Collada output to Mitsuba and PBRT
 Collada {
-    Camera:scale|sid=scale = -1 1 1
-    %Camera-camera:optics:technique_common:spherical    
-    % move the camera for each condition
-    % Camera:translate|sid=location = (xCam) (yCam) 0
-    %Camera:translate|sid=location = 0 0 0.1 
-    % Camera_001-camera:rotate|sid=rotationZ = 0 0 1 (rotz)
-    % Camera:rotate|sid=rotationY = 0 1 0 0
-    %Camera:rotate|sid=rotationX = 1 0 0 -90
-    % move and resize the sphere to match to photo
-    % Sphere:translate|sid=location = (locx) (locy) 0
-    %Sphere:scale|sid=scale = 2.2 2.2 2.2
-    
+    Camera:scale|sid=scale = -1 1 1    
 }
 
 % materials
 Generic {
     Material-material:material:ward
-    %Material-material:variant.string = ward
     Material-material:alphaU.float = (alphau)
     Material-material:alphaV.float = (alphau)
     Material-material:diffuseReflectance.spectrum = (ro_d)
     Material-material:specularReflectance.spectrum = (ro_s)
-
 }
-
 
 % lights
 Generic {
-
 	Hemi-light:emitter:envmap
 	Hemi-light:filename.string = room_apt56_exp1_8_dist2m_morelight_cropped_bilinear.hdr
 }
 
 Mitsuba {
-    %Camera-camera:sensor:spherical
-    %Camera-camera_sampler:sampler:ldsampler
     % use the path integrator with lots of samples
     integrator:integrator:path
+    Camera-camera_sampler:sampler:ldsampler
     Camera-camera_sampler:sampleCount.integer = 64
 }
 
 Mitsuba-path {
-    %Camera-camera:transform.name = toWorld
-    %Camera-camera:transform:matrix.value = -1 0 3.72529e-09 0 0 1 0 -0.01 -3.72529e-09 0 -1 0.15 0 0 0 1
-    %Camera-camera:sampler.id = Camera-camera_sampler
-    %Camera-camera:sampler.type = ldsampler
-    %Camera-camera_sampler:integer.name = sampleCount
-    %Camera-camera_sampler:integer.value = 64
-    %Camera-camera:film|id = Camera-camera_film
-    %Camera-camera:film|type = hdrfilm
-    
-
+    % change just the type of the existing camera
+    % instead of declaring a brand new camera
+    Camera-camera.type = spherical
 }
-
-
-    
-
