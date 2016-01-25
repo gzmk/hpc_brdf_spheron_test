@@ -45,8 +45,8 @@ addpath(genpath(pwd))
 hints.whichConditions = [];
 
 % Choose batch renderer options.
-hints.imageWidth = 370;
-hints.imageHeight = 2707;
+hints.imageWidth = 4060;
+hints.imageHeight = 2030;
 datetime=datestr(now);
 datetime=strrep(datetime,':','_'); %Replace colon with underscore
 datetime=strrep(datetime,'-','_');%Replace minus sign with underscore
