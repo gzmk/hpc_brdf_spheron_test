@@ -56,8 +56,8 @@ hints.recipeName = ['Spheron-test-', datetime];
 ChangeToWorkingFolder(hints);
 
 %comment all this out
-%toneMapFactor = 10;
-%isScale = true;
+toneMapFactor = 0;
+isScale = false;
 
 for renderer = {'Mitsuba'}
     
@@ -72,7 +72,7 @@ for renderer = {'Mitsuba'}
     montageName = sprintf('Spheron-test');
     montageFile = [montageName '.png'];
     [SRGBMontage, XYZMontage] = ...
-        MakeMontage(radianceDataFiles, montageFile, hints);
+        MakeMontage(radianceDataFiles, montageFile, toneMapFactor, isScale, hints);
     
     % display the sRGB montage
     %ShowXYZAndSRGB([], SRGBMontage, montageName);
