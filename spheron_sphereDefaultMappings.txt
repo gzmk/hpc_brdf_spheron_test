@@ -40,7 +40,8 @@ Mitsuba-path {
     % change just the type of the existing camera
     % instead of declaring a brand new camera
     Camera-camera.type = spherical
-    Camera-camera:rotate|sid = rotationY = 0 1 0 -30
+    Camera-camera:rotate.y = 1 
+    Camera-camera.rotate.angle = -30
 }
 
 
