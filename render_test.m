@@ -57,7 +57,7 @@ ChangeToWorkingFolder(hints);
 
 %comment all this out
 toneMapFactor = 0;
-isScale = false;
+isScale = true;
 
 for renderer = {'Mitsuba'}
     
