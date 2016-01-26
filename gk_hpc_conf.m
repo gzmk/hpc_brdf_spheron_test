@@ -89,9 +89,9 @@ radiometricScaleFactor = 0.0795827427;
 % save preferences for Mitsuba
 setpref('Mitsuba', 'adjustments', adjustmentsFile);
 setpref('Mitsuba', 'radiometricScaleFactor', radiometricScaleFactor);
-setpref('Mitsuba', 'app', myMistubaApp);
-setpref('Mitsuba', 'executable', myMistubaExecutable);
-setpref('Mitsuba', 'importer', myMistubaImporter);
+% setpref('Mitsuba', 'app', myMistubaApp);
+% setpref('Mitsuba', 'executable', myMistubaExecutable);
+% setpref('Mitsuba', 'importer', myMistubaImporter);
 
 
 %% Set Up PBRT Preferences.
