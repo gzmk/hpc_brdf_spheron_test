@@ -56,7 +56,7 @@ hints.recipeName = ['Spheron-test-', datetime];
 ChangeToWorkingFolder(hints);
 
 %comment all this out
-toneMapFactor = 0;
+toneMapFactor = 10;
 isScale = true;
 
 for renderer = {'Mitsuba'}
