@@ -73,9 +73,14 @@ for renderer = {'Mitsuba'}
     montageFile = [montageName '.png'];
     [SRGBMontage, XYZMontage] = ...
         MakeMontage(radianceDataFiles, montageFile, toneMapFactor, isScale, hints);
-    save('SRGBMontage.mat','SRGBMontage');
+%     save('SRGBMontage.mat','SRGBMontage');
     % display the sRGB montage
     %ShowXYZAndSRGB([], SRGBMontage, montageName);
 end
+load('renderings/Mitsuba/spheron_sphere4-001.mat')
+[sRGBImage, XYZImage, rawRGBImage] = MultispectralToSRGB(multispectralImage, S);
+save('rawRGBImage.mat','rawRGBImage');
+
+
 
 
