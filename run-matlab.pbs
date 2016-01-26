@@ -20,7 +20,7 @@ export MATLAB_PREFDIR=$PBS_JOBTMP/$$
 rm -rf $MATLAB_PREFDIR
 mkdir -p $MATLAB_PREFDIR
 
-xvfb-run --server-args="-screen 0 1024x768x24" matlab -nodisplay -r "gk_hpc_conf; render_test(); exit;" > output.log 2>&1
+xvfb-run --server-args="-screen 0 1024x768x24" matlab -nodisplay -r "render_test(); exit;" > output.log 2>&1
 
 rm -rf $MATLAB_PREFDIR
 
