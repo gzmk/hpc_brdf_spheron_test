@@ -60,11 +60,12 @@ title('Unregistered');
 % title('A: Default registration')
 
 %% Adjust initial radius to improve the fit
-optimizer.InitialRadius = optimizer.InitialRadius/15;
-optimizer.MaximumIterations = 2000;
+optimizer.InitialRadius = optimizer.InitialRadius/100;
+% optimizer.MaximumStepLength = optimizer.MaximumStepLength/100;
+optimizer.MaximumIterations = 9000;
 
-renderRegisteredAdjusted = imregister(photo2, renderedIm, 'affine', optimizer, metric);
-figure, imshowpair(renderRegisteredAdjusted, renderedIm);
+renderRegisteredAdjusted = imregister(photo_ball, render_ball, 'affine', optimizer, metric);
+figure, imshowpair(renderRegisteredAdjusted, render_ball);
 title('Adjusted InitialRadius');
 %%
 registered_photoname = ['registered', int2str(percent_gloss),'v2.mat'];
@@ -73,3 +74,16 @@ save(imname, 'renderRegisteredAdjusted');
 register_result = renderRegisteredAdjusted;
 
 
+%% register spheron images
+renderc = imcrop(renderg, [2517 0 379 2707]);
+photoc = imcrop(photog, [2517 0 379 2707]);
+
+% now let's find the spheres and crop them
+
+%% save cropped imgs
+gloss50g = rgb2gray(gloss50);
+gloss50c = imcrop(gloss50g, [0 0 379 2707]);
+gloss50_ball = imcrop(gloss50c, [0 1192 380 379]);
+save('gloss50c.mat','gloss50c');
+save('gloss50_ball.mat', 'gloss50_ball')
+imshow(gloss50_ball)
