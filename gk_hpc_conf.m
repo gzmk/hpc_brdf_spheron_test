@@ -56,42 +56,42 @@ adjustmentsFile = fullfile(RenderToolboxRoot(), ...
 % choose the default scale factor for radiance units
 radiometricScaleFactor = 0.0795827427;
 
-% if ismac()
-%     % on OS X, Mitsuba is an "app bundle"
-%     
-%     % use the default app bundle path
-%     myMistubaApp = '/Applications/Mitsuba.app';
-%     
-%     % or choose where you installed Mitsuba
-%     %myMistubaApp = '/my/path/for/Mitsuba.app';
-%     
-%     % don't change these--
-%     %   they tell RenderToolbox3 where to look inside the app bundle
-%     myMistubaExecutable = 'Contents/MacOS/mitsuba';
-%     myMistubaImporter = 'Contents/MacOS/mtsimport';
-%     
-% else
-%     % on Linux and Windows, Mitsuba has separate executable files
-%     
-%     % use the default executable paths
-%     myMistubaExecutable = '/share/apps/mitsuba/0.4.4/intel/bin/mitsuba.sh';
-%     myMistubaImporter = '/share/apps/mitsuba/0.4.4/intel/bin/mtsimport';
-%     
-%     % or choose where you installed Mitsuba
-%     %myMistubaExecutable = '/my/path/for/mitsuba';
-%     %myMistubaImporter = '/my/path/for/mtsimport';
-%     
-%     % don't change this--
-%     %   the "app" path is only meaningful for OS X
-%     myMistubaApp = '';
-% end
+if ismac()
+    % on OS X, Mitsuba is an "app bundle"
+    
+    % use the default app bundle path
+    myMistubaApp = '/Applications/Mitsuba.app';
+    
+    % or choose where you installed Mitsuba
+    %myMistubaApp = '/my/path/for/Mitsuba.app';
+    
+    % don't change these--
+    %   they tell RenderToolbox3 where to look inside the app bundle
+    myMistubaExecutable = 'Contents/MacOS/mitsuba';
+    myMistubaImporter = 'Contents/MacOS/mtsimport';
+    
+else
+    % on Linux and Windows, Mitsuba has separate executable files
+    
+    % use the default executable paths
+    myMistubaExecutable = '/share/apps/mitsuba/0.4.4/intel/bin/mitsuba.sh';
+    myMistubaImporter = '/share/apps/mitsuba/0.4.4/intel/bin/mtsimport';
+    
+    % or choose where you installed Mitsuba
+    %myMistubaExecutable = '/my/path/for/mitsuba';
+    %myMistubaImporter = '/my/path/for/mtsimport';
+    
+    % don't change this--
+    %   the "app" path is only meaningful for OS X
+    myMistubaApp = '';
+end
 
 % save preferences for Mitsuba
 setpref('Mitsuba', 'adjustments', adjustmentsFile);
 setpref('Mitsuba', 'radiometricScaleFactor', radiometricScaleFactor);
-% setpref('Mitsuba', 'app', myMistubaApp);
-% setpref('Mitsuba', 'executable', myMistubaExecutable);
-% setpref('Mitsuba', 'importer', myMistubaImporter);
+setpref('Mitsuba', 'app', myMistubaApp);
+setpref('Mitsuba', 'executable', myMistubaExecutable);
+setpref('Mitsuba', 'importer', myMistubaImporter);
 
 
 %% Set Up PBRT Preferences.
