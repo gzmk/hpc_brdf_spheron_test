@@ -60,7 +60,7 @@ if ismac()
     % on OS X, Mitsuba is an "app bundle"
     
     % use the default app bundle path
-    myMistubaApp = '/Applications/Mitsuba.app';
+    myMistubaApp = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-1/bin/mitsuba';
     
     % or choose where you installed Mitsuba
     %myMistubaApp = '/my/path/for/Mitsuba.app';
