@@ -10,18 +10,26 @@ fixed1 = 0.2;
 fixed2 = 0.5;
 diffuse = 'mccBabel-16.spd';
 
-ro_s = ['300:',num2str(fixed1),' 800:',num2str(fixed1)];
-%ro_d = diffuse;
-ro_d = ['300:', num2str(fixed2), ' 800:', num2str(fixed2)];
+% ro_s = ['300:',num2str(fixed1),' 800:',num2str(fixed1)];
+% %ro_d = diffuse;
+% ro_d = ['300:', num2str(fixed2), ' 800:', num2str(fixed2)];
 alphau = 0.05; % alphau and alphav should always be the same value for isotropic brdf
-% rotz = 0.5;
-mycell = {ro_s, ro_d, alphau};
+% % rotz = 0.5;
 
+%% for rgb rendering
+% ro_s = [num2str(fixed1),',',num2str(fixed1),',',num2str(fixed1)];
+% ro_d = [num2str(fixed2),',',num2str(fixed2),',',num2str(fixed2)];
+
+%% for monochromatic rendering
+ro_s = 0.5;
+ro_d = 0.5;
 % for i=1.0:0.5:10
 %     rotz = i;
 %     mycell2 = {ro_s, ro_d, alphau, rotz};
 %     mycell = [mycell;mycell2]
 % end
+
+mycell = {ro_s, ro_d, alphau};
 
 T = cell2table(mycell, 'VariableNames', {'ro_s' 'ro_d' 'alphau'});
 writetable(T,'/scratch/gk925/hpc_brdf_spheron_test/spheron_Conditions.txt','Delimiter','\t')
