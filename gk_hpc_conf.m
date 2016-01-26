@@ -60,7 +60,7 @@ if ismac()
     % on OS X, Mitsuba is an "app bundle"
     
     % use the default app bundle path
-    myMistubaApp = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-1/bin/mitsuba';
+    myMistubaApp = '/Applications/Mitsuba.app';
     
     % or choose where you installed Mitsuba
     %myMistubaApp = '/my/path/for/Mitsuba.app';
@@ -74,8 +74,11 @@ else
     % on Linux and Windows, Mitsuba has separate executable files
     
     % use the default executable paths
-    myMistubaExecutable = '/share/apps/mitsuba/0.4.4/intel/bin/mitsuba.sh';
-    myMistubaImporter = '/share/apps/mitsuba/0.4.4/intel/bin/mtsimport';
+%     myMistubaExecutable = '/share/apps/mitsuba/0.4.4/intel/bin/mitsuba.sh';
+%     myMistubaImporter = '/share/apps/mitsuba/0.4.4/intel/bin/mtsimport';
+    
+    myMistubaExecutable = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-1/bin/mitsuba.sh';
+    myMistubaImporter = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-1/bin/mtsimport';
     
     % or choose where you installed Mitsuba
     %myMistubaExecutable = '/my/path/for/mitsuba';
