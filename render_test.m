@@ -17,12 +17,12 @@ alphau = 0.05; % alphau and alphav should always be the same value for isotropic
 % % rotz = 0.5;
 
 %% for rgb rendering
-% ro_s = [num2str(fixed1),',',num2str(fixed1),',',num2str(fixed1)];
-% ro_d = [num2str(fixed2),',',num2str(fixed2),',',num2str(fixed2)];
+ro_s = [num2str(fixed1),',',num2str(fixed1),',',num2str(fixed1)];
+ro_d = [num2str(fixed2),',',num2str(fixed2),',',num2str(fixed2)];
 
 %% for monochromatic rendering
-ro_s = 0.5;
-ro_d = 0.5;
+% ro_s = 0.5;
+% ro_d = 0.5;
 % for i=1.0:0.5:10
 %     rotz = i;
 %     mycell2 = {ro_s, ro_d, alphau, rotz};

@@ -73,12 +73,17 @@ if ismac()
 else
     % on Linux and Windows, Mitsuba has separate executable files
     
-    % use the default executable paths
+    % multispectral rendering
 %     myMistubaExecutable = '/share/apps/mitsuba/0.4.4/intel/bin/mitsuba.sh';
 %     myMistubaImporter = '/share/apps/mitsuba/0.4.4/intel/bin/mtsimport';
-    
-    myMistubaExecutable = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-1/bin/mitsuba.sh';
-    myMistubaImporter = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-1/bin/mtsimport';
+   
+    % monochromatic rendering
+%     myMistubaExecutable = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-1/bin/mitsuba.sh';
+%     myMistubaImporter = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-1/bin/mtsimport';
+%     
+    % rgb rendering
+    myMistubaExecutable = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-3/bin/mitsuba.sh';
+    myMistubaImporter = '/share/apps/mitsuba/0.4.4/intel-SPECTRUM_SAMPLES-3/bin/mtsimport';
     
     % or choose where you installed Mitsuba
     %myMistubaExecutable = '/my/path/for/mitsuba';
