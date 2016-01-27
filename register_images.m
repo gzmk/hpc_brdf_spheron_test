@@ -62,7 +62,7 @@ title('Unregistered');
 %% Adjust initial radius to improve the fit
 optimizer.InitialRadius = optimizer.InitialRadius/100;
 % optimizer.MaximumStepLength = optimizer.MaximumStepLength/100;
-optimizer.MaximumIterations = 9000;
+optimizer.MaximumIterations = 8000;
 
 renderRegisteredAdjusted = imregister(photo_ball, render_ball, 'affine', optimizer, metric);
 figure, imshowpair(renderRegisteredAdjusted, render_ball);
