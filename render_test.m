@@ -17,12 +17,12 @@ alphau = 0.05; % alphau and alphav should always be the same value for isotropic
 % % rotz = 0.5;
 
 %% for rgb rendering
-ro_s = [num2str(fixed1),',',num2str(fixed1),',',num2str(fixed1)];
-ro_d = [num2str(fixed2),',',num2str(fixed2),',',num2str(fixed2)];
+% ro_s = [num2str(fixed1),',',num2str(fixed1),',',num2str(fixed1)];
+% ro_d = [num2str(fixed2),',',num2str(fixed2),',',num2str(fixed2)];
 
 %% for monochromatic rendering
-% ro_s = 0.5;
-% ro_d = 0.5;
+ro_s = 0.5;
+ro_d = 0.4;
 % for i=1.0:0.5:10
 %     rotz = i;
 %     mycell2 = {ro_s, ro_d, alphau, rotz};
@@ -53,8 +53,8 @@ addpath(genpath(pwd))
 hints.whichConditions = [];
 
 % Choose batch renderer options.
-hints.imageWidth = 500;
-hints.imageHeight = 500;
+hints.imageWidth = 5414;
+hints.imageHeight = 2707;
 datetime=datestr(now);
 datetime=strrep(datetime,':','_'); %Replace colon with underscore
 datetime=strrep(datetime,'-','_');%Replace minus sign with underscore
@@ -85,9 +85,9 @@ for renderer = {'Mitsuba'}
     % display the sRGB montage
     %ShowXYZAndSRGB([], SRGBMontage, montageName);
 end
-load('renderings/Mitsuba/spheron_sphere4-001.mat')
-[sRGBImage, XYZImage, rawRGBImage] = MultispectralToSRGB(multispectralImage, S);
-save('rawRGBImage.mat','rawRGBImage');
+% load('renderings/Mitsuba/spheron_sphere4-001.mat')
+% [sRGBImage, XYZImage, rawRGBImage] = MultispectralToSRGB(multispectralImage, S);
+% save('rawRGBImage.mat','rawRGBImage');
 
 
 
