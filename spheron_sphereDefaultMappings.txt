@@ -18,8 +18,8 @@ Generic {
     Material-material:material:ward
     Material-material:alphaU.float = (alphau)
     Material-material:alphaV.float = (alphau)
-    Material-material:diffuseReflectance.spectrum = (ro_d)
-    Material-material:specularReflectance.spectrum = (ro_s)
+    Material-material:diffuseReflectance.rgb = (ro_d)
+    Material-material:specularReflectance.rgb = (ro_s)
 }
 
 
