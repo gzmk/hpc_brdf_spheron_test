@@ -62,10 +62,10 @@ title('Unregistered');
 %% Adjust initial radius to improve the fit
 optimizer.InitialRadius = optimizer.InitialRadius/100;
 % optimizer.MaximumStepLength = optimizer.MaximumStepLength/100;
-optimizer.MaximumIterations = 8000;
+optimizer.MaximumIterations = 5000;
 
-renderRegisteredAdjusted = imregister(photo_ball, render_ball, 'affine', optimizer, metric);
-figure, imshowpair(renderRegisteredAdjusted, render_ball);
+renderRegisteredAdjusted2 = imregister(photo_ball, render_ball3, 'affine', optimizer, metric);
+figure, imshowpair(renderRegisteredAdjusted2, render_ball3);
 title('Adjusted InitialRadius');
 %%
 registered_photoname = ['registered', int2str(percent_gloss),'v2.mat'];
