@@ -13,7 +13,11 @@ diffuse = 'mccBabel-16.spd';
 % ro_s = ['300:',num2str(fixed1),' 800:',num2str(fixed1)];
 % %ro_d = diffuse;
 % ro_d = ['300:', num2str(fixed2), ' 800:', num2str(fixed2)];
+<<<<<<< HEAD
 alphau = 0.258357441263469; % alphau and alphav should always be the same value for isotropic brdf
+=======
+alphau = 0.3; % alphau and alphav should always be the same value for isotropic brdf
+>>>>>>> b9a6d0a4f7b0d9a336723db59a3d0a6e907cde8f
 % % rotz = 0.5;
 
 %% for rgb rendering
@@ -44,7 +48,7 @@ writetable(T,'/scratch/gk925/hpc_brdf_spheron_test/spheron_Conditions.txt','Deli
 setpref('RenderToolbox3', 'workingFolder', '/scratch/gk925/hpc_brdf_spheron_test');
 
 % use this scene and condition file.
-parentSceneFile = 'spheron_sphere7.dae';
+parentSceneFile = 'spheron_sphere6.dae';
 conditionsFile = 'spheron_Conditions.txt';
 mappingsFile = 'spheron_sphereDefaultMappings.txt';
 
