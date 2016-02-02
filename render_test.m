@@ -14,7 +14,7 @@ diffuse = 'mccBabel-16.spd';
 % %ro_d = diffuse;
 % ro_d = ['300:', num2str(fixed2), ' 800:', num2str(fixed2)];
 
-alphau = 0.258357441263469; % alphau and alphav should always be the same value for isotropic brdf
+alphau = 0.137788776826731; % alphau and alphav should always be the same value for isotropic brdf
 % % rotz = 0.5;
 
 %% for rgb rendering
@@ -22,9 +22,8 @@ alphau = 0.258357441263469; % alphau and alphav should always be the same value 
 % ro_d = [num2str(fixed2),',',num2str(fixed2),',',num2str(fixed2)];
 
 %% for monochromatic rendering
-ro_s = 0.158541955198751;
-ro_d = 0.841458044801249;
-		
+ro_s = 0.211445953231798;
+ro_d = 0.788554046768202;
 
 % for i=1.0:0.5:10
 %     rotz = i;
