@@ -2,49 +2,150 @@
 
 % Author @gizem
 % based on the example from: http://www.mathworks.com/help/images/examples/registering-multimodal-mri-images.html
-% 2/25/2015
-function register_result = register_images(percent_gloss)
-% before doinf this make sure to run sample_render.m
-% example function call:
-% register_result = register_images('DSC_0102_40gloss.pgm', 'sample_render.pgm', 40)
-% variables:
-% photoname: string, filename for .pgm photo
-% rendername: string, filename for saved render output in .pgm format (get this from renderIm.m)
-% percent_gloss: % gloss of the object in the photo
-% the rendered image should have a similar look to the photo, but what we
-% actually care about is the location and scale, so the render should have
-% locx=0, locy=0 and scalex = 2.2 () 
+% 2/2/2016
 
-% the photos are linearized by dcraw -4 -d -v -w -b 2.0 filename.NEF
-% so they were made twice as bright
+%% create two circular masks: one for photo one for render
+%% photo mask for 0 gloss
+cx=160;cy=205;ix=379;iy=380;r1=105;r2=115; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
 
-% load images, adjust image types so they match
-% pgm_name = [int2str(percent_gloss),'gloss.pgm'];
-pgm_name = ['gloss',int2str(percent_gloss),'v2.pgm'];
-photoname = strcat('/Local/Users/gizem/Documents/Research/GlossBump/Gloss_Level_Sphere_Photos/pgms_spray/',pgm_name);
-glossIm = imread(photoname,'pgm');
-% black = imread('DSC_0112.pgm')';
-% imdiff = gloss-black;
-% for 0percent we need to rotate and then flip the image
-B = imrotate(glossIm, -90);
-C = flip(B,2);
-glossIm = C;
-rescaledIm = double(glossIm)/65535;
-photo = imresize(rescaledIm, [1005,668]);
+load('gloss0_ball.mat') % make this a variable
+photo = gloss0_ball;
 
-sample_name = ['sample_render', int2str(percent_gloss),'.mat'];
-imname = strcat('/Local/Users/gizem/Documents/Research/GlossBump/Gloss_Level_Sphere_Photos/sample_renders/', sample_name);
-load(imname, 'imtosave');
-renderedIm = imtosave;
-% image2 = imread(rendername,'pgm');
-% renderedIm = double(image2)/255;
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 10 gloss
+cx=163;cy=207;ix=379;iy=380;r1=108;r2=113; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss10_ball.mat') % make this a variable
+photo = gloss10_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 20 gloss
+cx=160;cy=206;ix=379;iy=380;r1=107;r2=112; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss20_ball.mat') % make this a variable
+photo = gloss20_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 30 gloss
+cx=157;cy=208;ix=379;iy=380;r1=106;r2=112; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss30_ball.mat') % make this a variable
+photo = gloss30_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 40 gloss
+cx=158;cy=208;ix=379;iy=380;r1=108;r2=113; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss40_ball.mat') % make this a variable
+photo = gloss40_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 50 gloss
+cx=167;cy=212;ix=379;iy=380;r1=109;r2=115; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss50_ball.mat') % make this a variable
+photo = gloss50_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 60 gloss
+cx=167;cy=212;ix=379;iy=380;r1=109;r2=115; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss60_ball.mat') % make this a variable
+photo = gloss60_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 70 gloss
+cx=168;cy=213;ix=379;iy=380;r1=110;r2=115; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss70_ball.mat') % make this a variable
+photo = gloss70_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 80 gloss
+cx=160;cy=213;ix=379;iy=380;r1=109;r2=115; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss80_ball.mat') % make this a variable
+photo = gloss80_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 90 gloss
+cx=166;cy=214;ix=379;iy=380;r1=110;r2=115; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss90_ball.mat') % make this a variable
+photo = gloss90_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% photo mask for 100 gloss
+cx=168;cy=214;ix=379;iy=380;r1=110;r2=115; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+photo_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('gloss100_ball.mat') % make this a variable
+photo = gloss100_ball;
+
+masked_photo = photo_mask.*photo;
+imshow(masked_photo.*10)
+
+%% render mask for all gloss levels
+cx=179;cy=207;ix=379;iy=380;r1=121;r2=121; 
+[x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
+render_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
+
+load('spheron_sphere6-70.mat') % make this a variable
+im6 = multispectralImage;
+render = imcrop(im6, [2517 0 379 2707]);
+render_ball = imcrop(render, [0 1192 379 379]);
+render_ball = render_ball.*10;
+
+masked_render = render_mask.*render_ball;
+% imshow(render_photo.*10)
 
 %% 
-figure, imshowpair(photo, renderedIm, 'montage')
+figure, imshowpair(masked_photo, masked_render, 'montage')
 title('Unregistered')
 
 %% overlapping version
-figure, imshowpair(photo, renderedIm);
+figure, imshowpair(masked_photo, masked_render);
 title('Unregistered');
 % green and magenta show places where one image is brigther than the other
 % gray areas have similar intensities
@@ -60,12 +161,12 @@ title('Unregistered');
 % title('A: Default registration')
 
 %% Adjust initial radius to improve the fit
-optimizer.InitialRadius = optimizer.InitialRadius/70;
+optimizer.InitialRadius = optimizer.InitialRadius/100;
 % optimizer.MaximumStepLength = optimizer.MaximumStepLength/100;
 optimizer.MaximumIterations = 2000;
 
-renderRegisteredAdjusted6 = imregister(photo_ball, render_ball6.*10, 'similarity', optimizer, metric);
-figure, imshowpair(renderRegisteredAdjusted6, render_ball6.*10);
+renderRegisteredAdjusted = imregister(masked_photo, masked_render, 'similarity', optimizer, metric);
+figure, imshowpair(renderRegisteredAdjusted, masked_render);
 title('Adjusted InitialRadius');
 %%
 registered_photoname = ['registered', int2str(percent_gloss),'v2.mat'];
@@ -81,6 +182,7 @@ photoc = imcrop(photog, [2517 0 379 2707]);
 % now let's find the spheres and crop them
 
 %% save cropped imgs
+gloss50 = hdrread('gloss50.hdr');
 gloss50g = rgb2gray(gloss50);
 gloss50c = imcrop(gloss50g, [0 0 379 2707]);
 gloss50_ball = imcrop(gloss50c, [0 1192 380 379]);
