@@ -134,7 +134,7 @@ render_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
 load('spheron_sphere6-70.mat') % make this a variable
 im6 = multispectralImage;
 render = imcrop(im6, [2517 0 379 2707]);
-render_ball = 3
+render_ball = imcrop(render, [0 1192 379 379]);
 render_ball = render_ball.*10;
 
 masked_render = render_mask.*render_ball;
