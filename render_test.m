@@ -14,7 +14,7 @@ diffuse = 'mccBabel-16.spd';
 % %ro_d = diffuse;
 % ro_d = ['300:', num2str(fixed2), ' 800:', num2str(fixed2)];
 
-alphau = 0.2664; % alphau and alphav should always be the same value for isotropic brdf
+alphau = 0.2470; % alphau and alphav should always be the same value for isotropic brdf
 % % rotz = 0.5;
 
 %% for rgb rendering
@@ -22,7 +22,7 @@ alphau = 0.2664; % alphau and alphav should always be the same value for isotrop
 % ro_d = [num2str(fixed2),',',num2str(fixed2),',',num2str(fixed2)];
 
 %% for monochromatic rendering
-ro_s = 0.2977;
+ro_s = 0.2894;
 ro_d = 1-ro_s;
 
 % for i=1.0:0.5:10
@@ -94,3 +94,20 @@ end
 
 
 
+%% check if the fits look good
+load('0gloss_test.mat')
+im6 = multispectralImage;
+render = imcrop(im6, [2517 0 379 2707]);
+render_ball = imcrop(render, [0 1192 379 379]);
+render_ball = render_ball.*10;
+masked_render = render_mask.*render_ball;
+normmaskedr = masked_render./mean(masked_render(:));
+
+load('registered0_fit.mat')
+maskedp = render_mask.*J;
+normmaskedp = maskedp./mean(maskedp(:));
+bigIm0 = [normmaskedp normmaskedr];
+imshow(bigIm0, [1 max(bigIm0(:))])
+colormap jet
+colorbar
+save('bigIm0.mat','bigIm0');
