@@ -189,3 +189,25 @@ gloss50_ball = imcrop(gloss50c, [0 1192 380 379]);
 save('gloss50c.mat','gloss50c');
 save('gloss50_ball.mat', 'gloss50_ball')
 imshow(gloss50_ball)
+
+%% check if the fits look good
+load('10gloss_test.mat')
+im6 = multispectralImage;
+render = imcrop(im6, [2517 0 379 2707]);
+render_ball = imcrop(render, [0 1192 379 379]);
+render_ball = render_ball.*10;
+masked_render = render_mask.*render_ball;
+normmaskedr = masked_render./mean(masked_render(:));
+
+load('registered50_fit.mat')
+maskedp = render_mask.*J;
+normmaskedp = maskedp./mean(maskedp(:));
+bigIm60 = [normmaskedp normmaskedr];
+imshow(bigIm60, [1 max(bigIm60(:))])
+colormap jet
+colorbar
+save('bigIm50.mat','bigIm50');
+
+%% calculate the mean ratios to undo normalization on rho_s and rho_d
+
+% calculate the mean of 
